@@ -44,12 +44,12 @@ const userSchema = new mongoose.Schema({
 // });
 
 // Schema method to encrypt the user's password for DB storage
-userSchema.pre('save', async function (next) {
-    if (!this.isModified('password')) return next();
-    this.password = await bcrypt.hash(this.password, 12);
-    this.passwordConfirm = undefined;
-    next();
-});
+// userSchema.pre('save', async function (next) {
+//     if (!this.isModified('password')) return next();
+//     this.password = await bcrypt.hash(this.password, 12);
+//     this.passwordConfirm = undefined;
+//     next();
+// });
 
 // userSchema.pre('save', function (next) {
 //     if (!this.isModified('password') || this.isNew) return next();
